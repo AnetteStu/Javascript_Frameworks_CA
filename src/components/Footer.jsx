@@ -13,10 +13,8 @@ export default function Footer() {
         <li className="footerItem">
           For educational purposes only
         </li>
-        <li className="footerItem">
-          <div title="you'll get nothing">
-            Do not attempt to purchase from this shop
-          </div>
+        <li className="footerItem" title="You'll get nothing">
+          Do not attempt to purchase from this shop
         </li>
       </ul>
     </footer>

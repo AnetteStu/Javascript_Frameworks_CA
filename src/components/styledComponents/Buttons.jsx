@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
 export const Button = styled.button `
-background-color: grey;
+background-color: pink;
+color: white;
+border: transparent solid 2px;
 border-radius: .2em;
-${'' /* margin: .5em; */}
+margin: 0 .5em 0 0;
+transition: all .2s ease-in-out;
+:hover {
+  border: #e38787 solid 2px;
+}
 `
 
-export const SubmitButton = styled.button `
-  background-color: grey; 
+export const SubmitButton = styled(Button) `
+  ${'' /* background-color: grey;  */}
   border-radius: .2em;
 
   transition: .2s ease-in-out;

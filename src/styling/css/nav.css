@@ -1,9 +1,11 @@
 nav {
   width: 100%;
+  max-height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1% 12.5%;
+  margin: 0.8em 0;
 }
 nav ul {
   display: flex;
@@ -17,20 +19,36 @@ nav li {
 }
 
 .cart, i {
-  font-size: 1.2em;
+  font-size: 1.4em;
   transition: 0.2s ease-in-out;
+  margin: 1em 0;
 }
 .cart i:hover, i i:hover {
+  letter-spacing: 0;
+}
+
+.cart:hover {
+  letter-spacing: 0;
+  font-weight: normal;
+}
+
+.cart:hover .fa-cart-shopping {
   transform: scale(1.2);
 }
 
-.cart span a:hover {
-  letter-spacing: none;
+.cart:hover .cartIndex {
+  font-size: 0.6em;
+  left: -26px;
 }
 
 .cartIndex {
-  font-size: 0.8em;
-}
-.cartIndex::after {
-  content: " Items";
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  left: -24px;
+  bottom: 14px;
+  font-size: 0.45em;
+  color: #312929;
+  background-color: white;
+  border-radius: 100%;
+  padding: 0 0.5em;
 }/*# sourceMappingURL=nav.css.map */

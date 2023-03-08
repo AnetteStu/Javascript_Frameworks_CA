@@ -1,0 +1,37 @@
+.project {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.body {
+  flex: 1;
+}
+
+header {
+  display: flex;
+}
+
+footer {
+  margin-top: 2em;
+  flex: 0 1 60px;
+  background-color: rgb(255, 244, 252);
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 10%;
+}
+
+.footerItems {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+.footerItems li {
+  color: rgb(197, 141, 116);
+}
+.footerItems li title {
+  color: rgb(197, 141, 116);
+}/*# sourceMappingURL=layout.css.map */

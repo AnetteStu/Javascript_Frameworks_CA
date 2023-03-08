@@ -6,15 +6,16 @@
 
 html, body {
   min-height: 100vh;
-  background: linear-gradient(#fffcff, #e2e0e5) no-repeat;
+  background: linear-gradient(#fffcff, #f7ebf5) no-repeat;
+  background-attachment: fixed;
 }
 
 body {
   margin: 0;
 }
 
-header {
-  display: flex;
+.container {
+  height: 100%;
 }
 
 a {
@@ -27,6 +28,10 @@ a:hover {
   letter-spacing: 0.2em;
   font-weight: bold;
   color: beige;
+}
+
+i {
+  color: rgb(99, 86, 86);
 }
 
 h1 {

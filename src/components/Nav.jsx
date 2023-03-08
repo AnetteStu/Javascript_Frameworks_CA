@@ -17,8 +17,8 @@ export default function Nav() {
         <li>
           <Link to="cart" className='cart'>
             <i className="fa-solid fa-cart-shopping"></i>
-          </Link>
             <span className='cartIndex'>4</span>
+          </Link>
         </li>
       </ul>
     </nav>

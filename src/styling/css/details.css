@@ -17,4 +17,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+.productDetailsPage {
+  display: flex;
+  min-height: 100%;
+}
+.productDetailsPage .detailsWrapper {
+  margin: 0 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.productDetailsPage .detailsWrapper .productDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.productImage img {
+  max-height: 700px;
 }/*# sourceMappingURL=details.css.map */

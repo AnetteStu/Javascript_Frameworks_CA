@@ -30,7 +30,7 @@ export default function Contact() {
   return (
 
     <>
-      <div className='container'>
+      <>
         <h1 className="pageHeader">Contact</h1>
         <div className='contactForm'>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -53,7 +53,7 @@ export default function Contact() {
             <SubmitButton>Submit</SubmitButton>
           </form>
         </div>
-      </div>
+      </>
     </>
   )
 }

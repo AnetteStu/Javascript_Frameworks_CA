@@ -1,3 +1,7 @@
+// .container {
+//   height: 100%;
+// }
+
 .loadingDetails {
   width: 100%;
   margin: 0 auto;
@@ -14,4 +18,30 @@
 @keyframes cogRotate {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}
+}
+
+.productDetailsPage {
+  display: flex;
+  min-height: 100%;
+
+  .detailsWrapper {
+    margin: 0 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .productDetails {
+      display: flex;
+      flex-direction: column;
+      // height: 100%;
+    }
+    // .productDetails:last-child {
+    //   flex-shrink: 0;
+    // }
+  }
+
+}
+
+.productImage img {
+  max-height: 700px;
 }

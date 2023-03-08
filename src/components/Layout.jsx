@@ -1,18 +1,20 @@
 import { Outlet } from "react-router-dom";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 import Header from "./Header";
+
+import "../styling/css/layout.css";
 
 
 export default function Layout() {
   return (
-    <>
+    <div className="project">
       <Header/>
-      <div className="container">
-        <Outlet className="body"/>
+      <div className="body">
+        <div className="container">
+          <Outlet/>
+        </div>
       </div>
-      {/* <Footer/> */}
-    </>
+      <Footer/>
+    </div>
   )
 }
-
-// Footer left out temporary to focus on other more important functionality 

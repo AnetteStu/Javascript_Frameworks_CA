@@ -58,25 +58,25 @@ export default function Details() {
       localStorage.setItem("product-id", items.id)
     }
 
-    function removeFromCart() {
-      const yeet = localStorage.getItem("product-id")
-      try {
-        if(yeet) {
-          localStorage.removeItem("product-id")
-          console.log("Yeeted " + yeet);
-          return (
-            <div>Removed from cart</div>
-          )
-        } else {
-            console.log("Nothing in storage");
-            return (
-              <div>Nothing to remove</div>
-            )
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    // function removeFromCart() {
+    //   const yeet = localStorage.getItem("product-id")
+    //   try {
+    //     if(yeet) {
+    //       localStorage.removeItem("product-id")
+    //       console.log("Yeeted " + yeet);
+    //       return (
+    //         <div>Removed from cart</div>
+    //       )
+    //     } else {
+    //         console.log("Nothing in storage");
+    //         return (
+    //           <div>Nothing to remove</div>
+    //         )
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
 
     if (items) {
       // console.log(items.reviews);
@@ -103,29 +103,36 @@ export default function Details() {
         })}
 
         onAddToCartClick = {addToCart}
-        onRemoveFromCartClick = {removeFromCart}
+        // onRemoveFromCartClick = {removeFromCart}
       />
       )
     }
   return (<div>Nothing to be returned</div>)
 }
 
-export function RenderProductCard({ id, title, description, price, tags, imageUrl, onAddToCartClick, review, onRemoveFromCartClick}) {
+export function RenderProductCard({ id, title, description, price, tags, imageUrl, onAddToCartClick, review}) {
   return (
-    <div className='container'>
+    <>
       <Link to="/">Back</Link> 
-        <h1 className="pageHeader">{title} <small>{price}</small></h1>
-        <div key={id}>
-          <div>
-            <p>{description}</p>
-            <span>{tags}</span>
-          </div>
+      <div className="productDetailsPage" key={id}>
+        <div className="productImage">
           <img src={imageUrl} alt={title}/>
         </div>
-        {review}
-        
-        <Button  onClick={() => onAddToCartClick()}>Add to cart</Button>
-        <Button  onClick={() => onRemoveFromCartClick()}>Remove</Button>
+        <div className="detailsWrapper">
+          <div  className="productDetails">
+            <h1 className="pageHeader">{title}</h1>
+            <h3>{price},-</h3>
+            <p>{description}</p>
+            <span className="itemTag">Tags: {tags}</span>
+            <div className="itemButtons">
+              <Button  onClick={() => onAddToCartClick()}>Add to cart</Button>
+            </div>
+          </div>
+          <div className="reviewsWrapper">
+            {review}
+          </div>
+        </div>
+      </div>
 
         {/* {this.reviews.map((review) => {
           return (
@@ -135,6 +142,6 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
             </div>
           )
         })} */}        
-      </div>
+      </>
     )
   }
