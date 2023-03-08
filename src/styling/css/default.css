@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,300&display=swap");
+* {
+  font-family: "Kanit", sans-serif;
+  color: #8b3737;
+}
+
+html, body {
+  min-height: 100vh;
+  background: linear-gradient(#fffcff, #e2e0e5) no-repeat;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  color: rgb(77, 0, 0);
+}
+
+a:hover {
+  letter-spacing: 0.2em;
+  font-weight: bold;
+  color: beige;
+}
+
+h1 {
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 4em;
+}/*# sourceMappingURL=default.css.map */

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,300&display=swap');
+
+.welcome {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  span {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2em;
+  }
+}
+
+.filterInput {
+  border-radius: .5em;
+  padding: .2em .5em;
+  transition: .2s ease-in-out;
+  
+  background-color: rgb(36, 36, 36);
+  outline: 1px solid rgb(36, 36, 36);
+  border: 1px solid rgb(36, 36, 36);
+
+  &:focus-visible {
+    background-color: rgb(62, 62, 62);
+    outline: 1px solid rgb(36, 36, 36);
+    border: 1px solid rgb(36, 36, 36);
+
+    &::placeholder {
+      transition: .2s ease-in-out;
+      color: transparent;
+    }
+  }
+}
+
+.filterInput::placeholder{
+  font-size: 1em;
+  letter-spacing: 2px;
+
+  &:focus-visible {
+    color: red; 
+  }
+
+}

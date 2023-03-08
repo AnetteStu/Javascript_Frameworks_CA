@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;1,300&display=swap");
+.welcome {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.welcome span {
+  font-family: "Kanit", sans-serif;
+  font-size: 2em;
+}
+
+.filterInput {
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em;
+  transition: 0.2s ease-in-out;
+  background-color: rgb(36, 36, 36);
+  outline: 1px solid rgb(36, 36, 36);
+  border: 1px solid rgb(36, 36, 36);
+}
+.filterInput:focus-visible {
+  background-color: rgb(62, 62, 62);
+  outline: 1px solid rgb(36, 36, 36);
+  border: 1px solid rgb(36, 36, 36);
+}
+.filterInput:focus-visible::placeholder {
+  transition: 0.2s ease-in-out;
+  color: transparent;
+}
+
+.filterInput::placeholder {
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+.filterInput::placeholder:focus-visible {
+  color: red;
+}/*# sourceMappingURL=front.css.map */

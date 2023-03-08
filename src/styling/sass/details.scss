@@ -1,0 +1,17 @@
+.loadingDetails {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+
+  i {
+    font-size: 4em;
+    animation: cogRotate 1s infinite linear;
+  }
+}
+
+@keyframes cogRotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}

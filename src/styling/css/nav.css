@@ -1,0 +1,36 @@
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 12.5%;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0;
+}
+nav li {
+  list-style-type: none;
+  margin: 0.5em 1em;
+}
+
+.cart, i {
+  font-size: 1.2em;
+  transition: 0.2s ease-in-out;
+}
+.cart i:hover, i i:hover {
+  transform: scale(1.2);
+}
+
+.cart span a:hover {
+  letter-spacing: none;
+}
+
+.cartIndex {
+  font-size: 0.8em;
+}
+.cartIndex::after {
+  content: " Items";
+}/*# sourceMappingURL=nav.css.map */
