@@ -191,7 +191,7 @@
 }
 @media screen and (max-width: 767px) {
   .welcome {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   .product {
     width: 48%;
@@ -220,7 +220,7 @@
     height: 100%;
     display: flex;
     align-items: flex-end;
-    color: rgb(53, 0, 0) !important;
+    color: rgb(53, 0, 0);
   }
   .itemTitle {
     font-size: 1.2em;

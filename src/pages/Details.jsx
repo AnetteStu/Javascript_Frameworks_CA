@@ -3,8 +3,10 @@ import "../styling/css/details.css";
 import { Link, useParams } from "react-router-dom";
 // import style from "../css/productcard.module.css"
 import { useEffect, useState } from "react";
-import { Button, QuantityInput } from "../components/styledComponents/Buttons";
+import { Button } from "../components/styledComponents/Buttons";
 import { API } from "../constants/API";
+
+// QuantityInput with buttons
 
 export default function Details() {
   const [items, setItems] = useState([])

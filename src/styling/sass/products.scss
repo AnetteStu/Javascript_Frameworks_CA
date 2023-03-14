@@ -215,7 +215,7 @@
 
   @media screen and (max-width: 767px) {
     .welcome {
-      flex-direction: column!important;
+      flex-direction: column;
       // Figure out why it doesn't work without !important
     }
 
@@ -251,7 +251,7 @@
 
     display: flex;
     align-items: flex-end;
-    color: rgb(53, 0, 0)!important;
+    color: rgb(53, 0, 0);
   }
 
   // Remove important tag later!! figure out why it doesn't want to get the correct color
