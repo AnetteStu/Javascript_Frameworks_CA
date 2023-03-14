@@ -13,7 +13,6 @@ transition: all .2s ease-in-out;
 `
 
 export const SubmitButton = styled(Button) `
-  ${'' /* background-color: grey;  */}
   border-radius: .2em;
 
   transition: .2s ease-in-out;
@@ -23,20 +22,8 @@ export const SubmitButton = styled(Button) `
   }
 `
 
-export const CartButton = styled(Button) `
-background-color: red;
-transition: .2s ease-in-out;
-
-:hover {
-  padding: .5em;
-  letter-spacing: .2em;
-  font-weight: bold;
-}
-`
-
 export const FilterInput = styled.input `
   width: 100%;
-  ${'' /* border-radius: .5em; */}
   padding: .2em .5em;
   transition: .2s ease-in-out;
   
@@ -53,9 +40,9 @@ export const FilterInput = styled.input `
     &::placeholder {
       transition: .2s ease-in-out;
       color: transparent;
+      left: 0;
     }
   }
-
   ::placeholder {
   font-size: 1em;
   letter-spacing: 2px;
@@ -63,31 +50,42 @@ export const FilterInput = styled.input `
 `
 
 export const ContactInput = styled(FilterInput) `
-  width: 35%;
+  width: 90%;
   border-bottom: 2px solid gray;
   display: block;
 
   &::placeholder {
-    opacity: 0;
+    opacity: 1;
     transition: all .2s ease-in-out;
   }
-
-  &:focus::placeholder {
-    opacity: 1; 
-    transition: all .2s ease-in-out;
-  }
-
 `
-
 export const ContactLabel = styled.label `
   color: grey;
   position: relative;
-  top: 30px;
   transition: 0.2s ease all
+`
 
-  ${ContactInput}:focus ~ & {
-    top: -30px;
-    color: red;
+export const CartButton = styled(Button) `
+background-color: red;
+transition: .2s ease-in-out;
+height: 50px;
+width: 140px;
+  :hover {
+    padding: .5em;
+    letter-spacing: .2em;
     font-weight: bold;
   }
+`
+
+export const QuantityInput = styled(FilterInput)`
+  width: 50px;
+`
+
+export const CartDeleteButton = styled(Button)`
+  
+`
+
+export const CheckoutButton = styled(Button)`
+  height: 50px;
+  width: 130px;
 `

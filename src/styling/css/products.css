@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 2em;
+  align-items: flex-end;
 }
 
 .cardVisible {
@@ -189,6 +190,9 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .welcome {
+    flex-direction: column !important;
+  }
   .product {
     width: 48%;
   }

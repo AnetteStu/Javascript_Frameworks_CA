@@ -1,5 +1,12 @@
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .contactForm {
   margin-top: 2em;
+  min-width: 50%;
 }
 
 .error {

@@ -5,7 +5,7 @@ export default function Nav() {
   return (
     <nav>
       <div className='navLeft'>
-        EVERY
+        <Link to="/">EVERY</Link>
       </div>
       <ul>
         <li>

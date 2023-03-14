@@ -1,5 +1,16 @@
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+// .contactInfo {
+   // max-width: 50%;
+// }
+
 .contactForm {
   margin-top: 2em;
+  min-width: 50%;
 }
 
 // .label {

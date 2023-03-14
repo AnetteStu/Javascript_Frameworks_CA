@@ -1,0 +1,33 @@
+.successMessage {
+  background-color: rgba(187, 255, 131, 0.36);
+  border: 2px solid green;
+  color: green;
+  padding: 0.5em;
+  border-radius: 0.6em;
+  width: 100%;
+  margin: 2em 0;
+}
+
+.successTable {
+  margin-top: 1em;
+}
+
+.itemWrapperSuccess {
+  padding-top: 1em;
+  width: 100%;
+  border-bottom: 2px solid rgb(193, 172, 172);
+  display: flex;
+  justify-content: space-between;
+}
+
+.successLeft, .successRight {
+  display: flex;
+  flex-direction: row;
+}
+.successLeft div, .successRight div {
+  padding: 0.5em;
+}
+
+.successLeft {
+  flex-direction: row-reverse;
+}/*# sourceMappingURL=checkoutSuccess.css.map */
