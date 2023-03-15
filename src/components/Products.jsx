@@ -57,16 +57,17 @@ export default function Products() {
           item.title.toLowerCase().includes(search)
         }).map((item) => (
           <Link to={"/"+item.id} key={item.id} className="product">
-          <div className="cardVisible">
-            <p className="visibleTitle">{item.title}</p>
-            <p className="visibleDeets">
-             {(item.price>item.discountedPrice) ? item.price : item.discountedPrice},-
-              {/* Details &#62; */}
-            </p>
-            <div style={{backgroundImage: `url(${item.imageUrl})`}} className="productImg"/>
-          </div>
+            <div className="cardVisible">
+              <p className="visibleTitle">{item.title}</p>
+              <p className="visibleDeets">
+                {(item.price>item.discountedPrice) ? item.price : item.discountedPrice},-
+                {/* Details &#62; */}
+              </p>
+              <div style={{backgroundImage: `url(${item.imageUrl})`}} className="productImg"/>
+            </div>
               <div className="productInfo">
                 <h2 className="itemTitle">{item.title}</h2>
+                <p className="priceDeets">{item.description}</p>
                 <div className="contextWrapper">
                   <p className="priceDeets">{(items.price>items.discountedPrice) ? item.price : item.discountedPrice},-</p>
                   <p className="deets">Details &#62;</p>

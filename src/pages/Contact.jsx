@@ -15,6 +15,7 @@ const schema = yup.object({
 .required();
 
 export default function Contact() {
+  document.title = `Contact Page`
   const {
     register,
     handleSubmit,

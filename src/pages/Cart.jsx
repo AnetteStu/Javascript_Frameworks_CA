@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CheckoutButton, CartButton, CartDeleteButton, QuantityInput } from "../components/styledComponents/Buttons";
 
 export default function Cart() {
+  document.title = `Cart`
   return (
     <>
       <h1>Cart</h1>

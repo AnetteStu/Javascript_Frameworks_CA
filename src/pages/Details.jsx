@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { Button } from "../components/styledComponents/Buttons";
 import { API } from "../constants/API";
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/counter/cartSlice";
+
 // QuantityInput with buttons
 
 export default function Details() {
@@ -35,6 +38,8 @@ export default function Details() {
     getData()
     }, [url]);
 
+    document.title = `${items.title}`
+
   if (isLoading || !items) {
     return (
         <div className='loadingDetails'><i className="fa-solid fa-gear"></i></div>
@@ -55,10 +60,11 @@ export default function Details() {
       isOnSale = true
     }
 
-    function addToCart() {
-      console.log("Added " + items.id);
-      localStorage.setItem("product-id", items.id)
-    }
+    // function addToCart() {
+    //   console.log("Added " + items.id);
+    //   localStorage.setItem("product-id", items.id)
+    // }
+    
 
     // function removeFromCart() {
     //   const yeet = localStorage.getItem("product-id")
@@ -96,15 +102,22 @@ export default function Details() {
         {
           return (
             <div className="reviewComponent" key={review.id}>
-              <h3 className="reviewUsername"> {review.username} 
-                <small className="reviewRating"> {review.rating}</small>
-              </h3>
-              <p>{review.description}</p>
+              <div className="reviewerInfo">
+                <h3 className="reviewUsername"> {review.username}</h3>
+                <div className="reviewRating"> {review.rating} <i className="fa-solid fa-star"></i></div>
+              </div>
+              <div className="reviewDesc">
+                <p className="review">{review.description}</p>
+                <div className="thumbs">
+                  <i className="fa-solid fa-thumbs-up"></i>
+                  <i className="fa-solid fa-thumbs-down fa-flip-horizontal"></i>
+                </div>
+              </div>
             </div>
           )
         })}
 
-        onAddToCartClick = {addToCart}
+        // onAddToCartClick = {addToCart}
         // onRemoveFromCartClick = {removeFromCart}
       />
       )
@@ -113,6 +126,7 @@ export default function Details() {
 }
 
 export function RenderProductCard({ id, title, description, price, tags, imageUrl, onAddToCartClick, review}) {
+  const dispatch = useDispatch();
   return (
     <>
       <Link to="/">Back</Link> 
@@ -122,12 +136,24 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
         </div>
         <div className="detailsWrapper">
           <div  className="productDetails">
-            <h1 className="pageHeader">{title}</h1>
-            <h3>{price},-</h3>
-            <p>{description}</p>
-            <span className="itemTag">Tags: {tags}</span>
-            <div className="itemButtons">
-              <Button  onClick={() => onAddToCartClick()}>Add to cart</Button>
+            <div className="firstDetails">
+              <h1 className="pageHeader">{title}</h1>
+              <h3 className="subInfo">{price},-
+                <div className="itemButtons">
+                  <Button 
+                    onClick={() => 
+                      dispatch(addToCart({
+                      id, title, imageUrl, price
+                      }))
+                    }>Add to cart
+                  </Button>
+                </div>
+              </h3>
+              <p>{description}</p>
+            </div>
+            <div className="secondDetails">
+              <div className="itemTag">Tags: </div>
+              <span className="tag">{tags}</span>
             </div>
           </div>
           <div className="reviewsWrapper">

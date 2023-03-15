@@ -6,6 +6,7 @@ import "../styling/css/front.css";
 // ${magn}
 
 export default function FrontPage() {
+  document.title = `eCommerce`
   return (
     <>
       <div className="welcome">

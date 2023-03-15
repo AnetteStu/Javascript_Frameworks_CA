@@ -1,11 +1,21 @@
 import { Link } from 'react-router-dom';
 import "../styling/css/nav.css";
+import { useSelector } from 'react-redux';
 
 export default function Nav() {
+  const cart = useSelector((state) => state.cart);
+
+const getTotalQuantity = () => {
+  let total = 0
+  cart.forEach(item => {
+    total += item.quantity
+  });
+  return total
+}
   return (
     <nav>
       <div className='navLeft'>
-        <Link to="/">EVERY</Link>
+        <Link to="/">eCommerce</Link>
       </div>
       <ul>
         <li>
@@ -17,7 +27,7 @@ export default function Nav() {
         <li>
           <Link to="cart" className='cart'>
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className='cartIndex'>4</span>
+            <span className='cartIndex'>{getTotalQuantity() || 0}</span>
           </Link>
         </li>
       </ul>
