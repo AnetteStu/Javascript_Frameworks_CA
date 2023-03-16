@@ -30,6 +30,9 @@ const cartSlice = createSlice({
       const removeItem = state.cart.filter((item) => item.id !== action.payload);
       state.cart = removeItem;
     },
+    clear: (state) => {
+      state.cart = []
+    },
   },
 });
 
@@ -39,6 +42,7 @@ export const {
   incrementQuantity,
   decrementQuantity,
   removeItem,
+  clear,
 } = cartSlice.actions;
 
 // const initialState = {

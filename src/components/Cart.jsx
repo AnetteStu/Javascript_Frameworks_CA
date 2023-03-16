@@ -2,11 +2,13 @@ import CartItem from '../pages/CartItem'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Total from './Total'
+import { useDispatch } from 'react-redux'
+import { clear } from '../features/counter/cartSlice'
 
 import { CartButton, CheckoutButton } from './styledComponents/Buttons'
 
 function Cart() {
-
+  const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart)
   // console.log(cart);
 
@@ -37,7 +39,7 @@ function Cart() {
         </table>
         <div className="cartCheckoutFinal">
             <div className="cartCheckoutLeft">
-              <CartButton>Clear</CartButton>
+              <CartButton onClick={() => dispatch(clear())}>Clear</CartButton>
             </div>
             <div className="cartCheckoutRight">
                 <Total/>
