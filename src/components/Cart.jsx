@@ -1,0 +1,60 @@
+import CartItem from '../pages/CartItem'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import Total from './Total'
+
+import { CartButton, CheckoutButton } from './styledComponents/Buttons'
+
+function Cart() {
+
+  const cart = useSelector((state) => state.cart)
+  // console.log(cart);
+
+  if (cart.length >= 1) {
+    return (
+      <>
+        <h1>Cart</h1>
+        <table className="cartTable">
+            <tbody>
+            <tr className="tableRowFirst">
+                <th >Information</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Delete</th>
+              </tr>
+              {cart?.map((item) => (
+                <CartItem
+                  key={item.id}
+                  id={item.id}
+                  image={item.imageUrl}
+                  title={item.title}
+                  price={item.price} 
+                  quantity={item.quantity}
+                />
+              ))}  
+          </tbody>
+        </table>
+        <div className="cartCheckoutFinal">
+            <div className="cartCheckoutLeft">
+              <CartButton>Clear</CartButton>
+            </div>
+            <div className="cartCheckoutRight">
+                <Total/>
+                <CheckoutButton>
+                  <Link to="/checkoutsuccess">Checkout</Link>
+                </CheckoutButton>
+            </div>
+          </div>
+      </>
+    )
+  }
+  return (
+    <>
+      <h1>Cart</h1>
+      <p>Nothing in cart yet!</p>
+    </>
+  )
+}
+
+export default Cart
