@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Total from './Total'
 import { useDispatch } from 'react-redux'
-import { clear } from '../features/counter/cartSlice'
+import { clear, checkout } from '../features/counter/cartSlice'
 
 import { CartButton, CheckoutButton } from './styledComponents/Buttons'
 
 function Cart() {
+  document.title = `Cart`
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart)
   // console.log(cart);
@@ -31,7 +32,7 @@ function Cart() {
                   id={item.id}
                   image={item.imageUrl}
                   title={item.title}
-                  price={item.price} 
+                  price={item.price.toFixed(2)} 
                   quantity={item.quantity}
                 />
               ))}  
@@ -43,7 +44,7 @@ function Cart() {
             </div>
             <div className="cartCheckoutRight">
                 <Total/>
-                <CheckoutButton>
+                <CheckoutButton onClick={() => dispatch(checkout())}>
                   <Link to="/checkoutsuccess">Checkout</Link>
                 </CheckoutButton>
             </div>

@@ -7,8 +7,9 @@ export default function Total() {
     let totalQuantity = 0
     let totalPrice = 0
     cart.forEach(item => {
-      totalQuantity += item.totalQuantity
+      totalQuantity += item.quantity
       totalPrice += item.price * item.quantity
+      console.log(totalQuantity);
     })
     return {totalPrice, totalQuantity}
   }
@@ -18,7 +19,7 @@ export default function Total() {
         Total {getTotal().totalQuantity} items
       </div>
       <div className="cartTotalPrice">
-        {getTotal().totalPrice},-
+        {getTotal().totalPrice.toFixed(2)},-
       </div>
     </div>
   )

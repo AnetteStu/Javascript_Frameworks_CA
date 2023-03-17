@@ -31,6 +31,13 @@ const cartSlice = createSlice({
       state.cart = removeItem;
     },
     clear: (state) => {
+      if (window.confirm("Are you sure you want to proceed")) {
+        state.cart = []
+      } else {
+        return
+      }
+    },
+    checkout: (state) => {
       state.cart = []
     },
   },
@@ -43,6 +50,7 @@ export const {
   decrementQuantity,
   removeItem,
   clear,
+  checkout,
 } = cartSlice.actions;
 
 // const initialState = {

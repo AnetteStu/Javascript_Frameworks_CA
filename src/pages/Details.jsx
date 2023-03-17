@@ -1,6 +1,6 @@
 import "../styling/css/details.css";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, redirect, useParams } from "react-router-dom";
 // import style from "../css/productcard.module.css"
 import { useEffect, useState } from "react";
 import { Button } from "../components/styledComponents/Buttons";
@@ -59,33 +59,6 @@ export default function Details() {
     if (items.price > items.discountedPrice) {
       isOnSale = true
     }
-
-    // function addToCart() {
-    //   console.log("Added " + items.id);
-    //   localStorage.setItem("product-id", items.id)
-    // }
-    
-
-    // function removeFromCart() {
-    //   const yeet = localStorage.getItem("product-id")
-    //   try {
-    //     if(yeet) {
-    //       localStorage.removeItem("product-id")
-    //       console.log("Yeeted " + yeet);
-    //       return (
-    //         <div>Removed from cart</div>
-    //       )
-    //     } else {
-    //         console.log("Nothing in storage");
-    //         return (
-    //           <div>Nothing to remove</div>
-    //         )
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }
-
     if (items) {
       // console.log(items.reviews);
       return (

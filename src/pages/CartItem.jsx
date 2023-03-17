@@ -40,7 +40,7 @@ function CartItem({id, description, image, title, price, quantity=0}) {
           {price}
         </td>
         <td  className="cartTableNumber">
-          {(price*quantity)}
+          {(price*quantity).toFixed(2)}
         </td>
         <td>
           <CartDeleteButton onClick={() => dispatch(removeItem(id))}>

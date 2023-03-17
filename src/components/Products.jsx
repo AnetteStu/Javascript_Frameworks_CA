@@ -56,7 +56,7 @@ export default function Products() {
           item : 
           item.title.toLowerCase().includes(search)
         }).map((item) => (
-          <Link to={"/"+item.id} key={item.id} className="product">
+          <Link to={"products/"+item.id} key={item.id} className="product">
             <div className="cardVisible">
               <p className="visibleTitle">{item.title}</p>
               <p className="visibleDeets">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 export default function NoPage() {
+  document.title = `Not Found`
   return (
     <>
     <Link to="/">Go back</Link>
