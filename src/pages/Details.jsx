@@ -1,6 +1,6 @@
 import "../styling/css/details.css";
 
-import { Link, redirect, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import style from "../css/productcard.module.css"
 import { useEffect, useState } from "react";
 import { Button } from "../components/styledComponents/Buttons";
