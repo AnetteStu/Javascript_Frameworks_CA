@@ -11,17 +11,26 @@
   transition: all 0.2s ease-in-out;
 }
 .cardVisible .visibleTitle {
+  display: flex;
+  flex-direction: row;
   margin: 0;
   position: relative;
   top: 30px;
   font-size: 1.4em;
   transition: all 0.2s ease-in-out;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardVisible .visibleTitle i {
+  font-size: 1em;
+  letter-spacing: 2px;
+  color: rgb(236, 162, 26);
 }
 .cardVisible .visibleDeets {
   height: inherit;
   display: flex;
   position: relative;
-  top: 245px;
+  top: 230px;
   color: white;
   background: linear-gradient(0.25turn, hsla(0, 52%, 21%, 0), hsla(0, 52%, 21%, 0.21));
   flex-direction: row;

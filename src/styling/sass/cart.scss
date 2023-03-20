@@ -48,6 +48,19 @@ th:first-of-type {
   border-radius: .5em;
 }
 
+.cartItemButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: .2em;
+}
+.cartQuantity {
+  min-width: 10px;
+  margin: 0 .5em;
+}
+
 .cartCheckoutFinal {
   margin-top: 1em;
   padding-top: .5em;
@@ -62,16 +75,26 @@ th:first-of-type {
 .cartCheckoutRight {
   display: flex;
   flex-direction: row;
-  align-items: flex-end; 
+  align-items: center;
+}
+.cartSum {
+  font-weight: bold;
+  margin-right: .5em;
 }
 
 .cartTotalSum {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end; 
+  flex-direction: row;
+  align-items: center;
   margin-right: 1em;
+  :nth-child(2) {
+    margin-right: .5em;
+  }
+  // :last-child {
+  //   font-size: 1.2em;
+  // }
 }
 
-.cartTotalPrice {
+.cartTotalPrices {
   font-weight: bold;
 }

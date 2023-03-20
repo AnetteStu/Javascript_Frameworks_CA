@@ -40,3 +40,22 @@ h1 {
   font-weight: bold;
   font-size: 4em;
 }
+
+.oldPrice {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+.oldPrice {
+  color: red;
+  .oldPriceTxt {
+    color: white;
+    background-color: #c000004e;
+    padding: .1em;
+    border-radius: .2em;
+  }
+}
+
+.oldPriceDetails {
+
+}

@@ -31,13 +31,14 @@ const cartSlice = createSlice({
       state.cart = removeItem;
     },
     clear: (state) => {
-      if (window.confirm("Are you sure you want to proceed")) {
+      if (window.confirm("Are you sure you want to remove all items from cart?")) {
         state.cart = []
       } else {
         return
       }
     },
     checkout: (state) => {
+      console.log("Pretend to POST order to backend");
       state.cart = []
     },
   },

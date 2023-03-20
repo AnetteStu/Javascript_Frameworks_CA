@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import "../styling/css/checkoutSuccess.css";
 
 export default function CheckoutSuccess() {
   return (
     <>
-      <h1>Thank you for your order!</h1>
+      <h1>Thank you for your order!</h1> <Link to="/">Return</Link> 
       <div className="successMessage">Order no: 00037632</div>
       <div>Your items will be on their way soon!</div>
       <div className="successTable">

@@ -11,11 +11,21 @@
   transition: all .2s ease-in-out;
 
   .visibleTitle {
+    display: flex;
+    flex-direction: row;
     margin: 0;
     position: relative;
     top: 30px;
     font-size: 1.4em;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    align-items: center;
+    justify-content: space-between;
+
+    i {
+      font-size: 1em;
+      letter-spacing: 2px;
+      color: rgb(236, 162, 26);
+    }
   }
 
   .visibleDeets {
@@ -23,7 +33,7 @@
     // width: 100%;
     display: flex;
     position: relative;
-    top: 245px;
+    top: 230px;
     // left: 30px;
     color: white;
     
@@ -36,6 +46,11 @@
     justify-content: flex-end;
     padding: 0 1em;
   }
+}
+
+.rating {
+  // position: relative;
+  // top: 4px;
 }
 
 .itemTitle {

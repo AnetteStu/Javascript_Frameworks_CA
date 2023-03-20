@@ -1,24 +1,20 @@
 import "../styling/css/cart.css";
 import { incrementQuantity, decrementQuantity, removeItem } from "../features/counter/cartSlice";
-import { CartDeleteButton } from "../components/styledComponents/Buttons";
+import { CartDeleteButton } from "./styledComponents/Buttons";
 import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
 
-function CartItem({id, description, image, title, price, quantity=0}) {
+export default function CartItem({id, description, image, title, price, discount, quantity=0}) {
   const dispatch = useDispatch()
 
   return (
     <>       
       <tr>
         <td>
-          {/* Link will be "/${id}" 
-          Title, general info, price be fetched from API
-          quantity placeholder be fetched from LocalStorage and updated upon clicking
-          Total be calculated on site
-          Delete removes quantity of select product*/}
+
           <div className="cartInfoLeft">
-            <Link to={"/"+id}>
+            <Link to={"/products/"+id}>
               <img src={image} alt="placeholder" className="cartTableImg"/>
             </Link>
             <div className="cartTableGeInfo">
@@ -30,17 +26,17 @@ function CartItem({id, description, image, title, price, quantity=0}) {
           </div>
         </td>
         <td className="cartTableNumber">
-          <div className='cartItem__incrDec'>
+          <div className='cartItemButtons'>
             <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
-            <p>{quantity}</p>
+            <div className="cartQuantity">{quantity}</div>
             <button onClick={() => dispatch(incrementQuantity(id))}>+</button>
           </div>
         </td>
         <td>
-          {price}
+          {(price > discount) ? <>{discount} SALE</> : <>{price}</>} 
         </td>
-        <td  className="cartTableNumber">
-          {(price*quantity).toFixed(2)}
+        <td className="cartTableNumber">
+          {(price > discount) ? discount*quantity : price*quantity}
         </td>
         <td>
           <CartDeleteButton onClick={() => dispatch(removeItem(id))}>
@@ -51,5 +47,3 @@ function CartItem({id, description, image, title, price, quantity=0}) {
     </>
   )
 }
-
-export default CartItem

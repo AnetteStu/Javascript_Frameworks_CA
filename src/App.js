@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styling/css/default.css'
 
 import { Routes, Route} from 'react-router-dom';
-import Cart from './components/Cart';
+import Cart from './pages/Cart';
 import Details from './pages/Details';
 import CheckoutSuccess from './pages/CheckoutSuccess';
 

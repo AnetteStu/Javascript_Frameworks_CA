@@ -12,8 +12,8 @@ export default function FrontPage() {
       <div className="welcome">
         <h1>Welcome!</h1><span>How may we interest you?</span>
       </div>
-      {/* <input placeholder="Search..." className="filterInput"></input> */}
-       <Products/>
+      {/* <FrontPage/> */}
+      <Products/>
     </>
   )
 }

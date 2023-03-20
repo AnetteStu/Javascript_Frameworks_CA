@@ -5,6 +5,12 @@ import { useEffect, useState } from "react";
 import { API } from "../constants/API";
 import { FilterInput } from "./styledComponents/Buttons";
 
+/**
+ * Returns an array of product and displays them
+ * @example 
+ * <Products />
+ */
+
 export default function Products() {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(false);
@@ -58,18 +64,30 @@ export default function Products() {
         }).map((item) => (
           <Link to={"products/"+item.id} key={item.id} className="product">
             <div className="cardVisible">
-              <p className="visibleTitle">{item.title}</p>
-              <p className="visibleDeets">
-                {(item.price>item.discountedPrice) ? item.price : item.discountedPrice},-
-                {/* Details &#62; */}
-              </p>
+              <div className="visibleTitle">
+                <div>{item.title}</div>
+                <div>{item.rating}<i className="fa-solid fa-star"></i> </div>
+              </div>
+              <div className="visibleDeets">
+                {((item.price)>(item.discountedPrice)) ? 
+                (<>
+                    <div  className="oldPrice">
+                      <del className="oldPriceTxt">
+                        {item.price}
+                      </del>
+                    </div> 
+                    {item.discountedPrice}
+                  </>) : 
+                  item.price 
+                  },-
+              </div>
               <div style={{backgroundImage: `url(${item.imageUrl})`}} className="productImg"/>
             </div>
               <div className="productInfo">
                 <h2 className="itemTitle">{item.title}</h2>
                 <p className="priceDeets">{item.description}</p>
                 <div className="contextWrapper">
-                  <p className="priceDeets">{(items.price>items.discountedPrice) ? item.price : item.discountedPrice},-</p>
+                  <p className="priceDeets">{((item.price)>(item.discountedPrice)) ? (<><del className="oldPrice">{item.price}</del> {item.discountedPrice}</>) : item.price},-</p>
                   <p className="deets">Details &#62;</p>
                 </div>
               </div>

@@ -38,4 +38,20 @@ h1 {
   font-family: "Saira Condensed", sans-serif;
   font-weight: bold;
   font-size: 4em;
+}
+
+.oldPrice {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.oldPrice {
+  color: red;
+}
+.oldPrice .oldPriceTxt {
+  color: white;
+  background-color: rgba(192, 0, 0, 0.3058823529);
+  padding: 0.1em;
+  border-radius: 0.2em;
 }/*# sourceMappingURL=default.css.map */

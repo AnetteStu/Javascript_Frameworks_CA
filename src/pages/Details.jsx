@@ -11,6 +11,12 @@ import { addToCart } from "../features/counter/cartSlice";
 
 // QuantityInput with buttons
 
+/**
+ * Pulls param from URL and displays detailed info from the returned product
+ * @returns
+ * id, key, title, price, discountedPrice
+ */
+
 export default function Details() {
   const [items, setItems] = useState([])
   const [isLoading, setIsLoading] = useState(false);
@@ -55,23 +61,27 @@ export default function Details() {
     )
   }
 
-    let isOnSale = false;
-    if (items.price > items.discountedPrice) {
+  
+  let isOnSale = false;
+    if ((items.price) > (items.discountedPrice)) {
       isOnSale = true
     }
+
     if (items) {
       // console.log(items.reviews);
       return (
         <RenderProductCard
         id = {items.id}
         title={items.title}
-        price={!isOnSale ?  items.price : items.discountedPrice }
+        price= {items.price}
+        discountedPrice= {isOnSale ? items.discountedPrice : items.price}
         description = {items.description}
         tags = {items.tags}
         imageUrl = {items.imageUrl}
 
         review = {(items.reviews === null || items.reviews === [] || items.reviews === undefined) 
-        ? <div>No reviews yet</div> : items.reviews.map((review) => 
+        ? <div>No reviews yet</div> 
+        : items.reviews.map((review) => 
         {
           return (
             <div className="reviewComponent" key={review.id}>
@@ -89,17 +99,21 @@ export default function Details() {
             </div>
           )
         })}
-
-        // onAddToCartClick = {addToCart}
-        // onRemoveFromCartClick = {removeFromCart}
+        rating = {items.rating}
       />
       )
     }
   return (<div>Nothing to be returned</div>)
 }
 
-export function RenderProductCard({ id, title, description, price, tags, imageUrl, onAddToCartClick, review}) {
+export function RenderProductCard({ id, title, description, price, tags, imageUrl, review, discountedPrice, rating}) {
   const dispatch = useDispatch();
+  console.log(rating);
+  const origPrice = price;
+  const discPrice = (discountedPrice)
+  // let isDiscounted = origPrice - (origPrice * discPrice).toFixed(2)
+  
+  const isDiscounted = parseFloat(100 - (100 * discPrice / origPrice).toFixed(2))
   return (
     <>
       <Link to="/">Back</Link> 
@@ -110,19 +124,35 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
         <div className="detailsWrapper">
           <div  className="productDetails">
             <div className="firstDetails">
-              <h1 className="pageHeader">{title}</h1>
-              <h3 className="subInfo">{price},-
+              <h1 className="pageHeader">
+                {title}
+              </h1>
+              {rating} <i className="fa-solid fa-star"></i>
+              <div className="subInfo">
+               {(price > discountedPrice) ? 
+                <div className="detailsPrice">
+                  <del className=" oldPrice oldPriceDetails">
+                    {price},-
+                  </del> 
+                  {discountedPrice},-
+                  <span className="discountPersentage">
+                      {Number(isDiscounted.toFixed(2))}% Off!
+                  </span>
+                </div>
+                  :
+                  `${price},-`
+               }
                 <div className="itemButtons">
                   <Button 
                     onClick={() => 
                       dispatch(addToCart({
-                      id, title, imageUrl, price
+                      id, title, imageUrl, price, discountedPrice
                       }))
                     }>Add to cart
                   </Button>
                 </div>
-              </h3>
-              <p>{description}</p>
+              </div>
+            <p className="itemDescription">{description}</p>
             </div>
             <div className="secondDetails">
               <div className="itemTag">Tags: </div>
@@ -133,16 +163,7 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
             {review}
           </div>
         </div>
-      </div>
-
-        {/* {this.reviews.map((review) => {
-          return (
-            <div key={review.id}>
-              <h3>{review.username}<span>{review.rating}</span></h3>
-              <p>{review.description}</p> 
-            </div>
-          )
-        })} */}        
+      </div>    
       </>
     )
   }

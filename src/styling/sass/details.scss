@@ -63,6 +63,22 @@
     }
   }
 
+  .discountPersentage {
+    background-color: rgba(216, 130, 169, 0.533);
+    padding: .2em;
+    border-radius: .5em;
+    text-transform: uppercase;
+  }
+  .itemButtons {
+    display: flex;
+    // flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.itemDescription {
+  flex-wrap: wrap;
 }
 .productImage img {
   height: 500px;

@@ -1,11 +1,11 @@
-import CartItem from '../pages/CartItem'
+import CartItem from '../components/CartItem'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Total from './Total'
+import Total from '../components/Total'
 import { useDispatch } from 'react-redux'
 import { clear, checkout } from '../features/counter/cartSlice'
 
-import { CartButton, CheckoutButton } from './styledComponents/Buttons'
+import { CartButton, CheckoutButton } from '../components/styledComponents/Buttons'
 
 function Cart() {
   document.title = `Cart`
@@ -26,16 +26,17 @@ function Cart() {
                 <th>Total</th>
                 <th>Delete</th>
               </tr>
-              {cart?.map((item) => (
-                <CartItem
-                  key={item.id}
-                  id={item.id}
-                  image={item.imageUrl}
-                  title={item.title}
-                  price={item.price.toFixed(2)} 
-                  quantity={item.quantity}
-                />
-              ))}  
+                {cart?.map((item) => (
+                  <CartItem
+                    key={item.id}
+                    id={item.id}
+                    image={item.imageUrl}
+                    title={item.title}
+                    price={item.price.toFixed(2)} 
+                    discount= {item.discountedPrice}
+                    quantity={item.quantity}
+                  />
+                ))}  
           </tbody>
         </table>
         <div className="cartCheckoutFinal">
