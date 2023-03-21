@@ -44,8 +44,14 @@ export const FilterInput = styled.input `
     }
   }
   ::placeholder {
-  font-size: 1em;
+  font-size: 1.5em;
   letter-spacing: 2px;
+  color: #b9233d;
+
+    &::before {
+      content: "search"
+    }
+    ${'' /* Why u no work */}
   }
 `
 

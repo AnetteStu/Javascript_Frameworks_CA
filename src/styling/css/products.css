@@ -2,7 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 2em;
-  align-items: flex-end;
+  align-items: flex-start;
+  min-height: 60vmin;
 }
 
 .cardVisible {
@@ -16,13 +17,13 @@
   margin: 0;
   position: relative;
   top: 30px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   transition: all 0.2s ease-in-out;
   align-items: center;
   justify-content: space-between;
 }
 .cardVisible .visibleTitle i {
-  font-size: 1em;
+  font-size: 1.2em;
   letter-spacing: 2px;
   color: rgb(236, 162, 26);
 }

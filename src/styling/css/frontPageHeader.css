@@ -4,8 +4,7 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 70vh;
-
-  position:static;
+  position: static;
   top: 0;
 }
 
@@ -15,16 +14,12 @@
   justify-content: space-between;
   padding: 2em;
   margin: 0;
-
-  text-shadow: rgb(216, 254, 255) 1px 1px 10px; 
+  text-shadow: rgb(216, 254, 255) 1px 1px 10px;
   text-transform: uppercase;
-
-  & span {
-    color: white;
-    
-  }
-
-  & h1 {
-    color: white;
-  }
 }
+.welcome span {
+  color: white;
+}
+.welcome h1 {
+  color: white;
+}/*# sourceMappingURL=frontPageHeader.css.map */

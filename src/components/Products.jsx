@@ -66,7 +66,7 @@ export default function Products() {
             <div className="cardVisible">
               <div className="visibleTitle">
                 <div>{item.title}</div>
-                <div>{item.rating}<i className="fa-solid fa-star"></i> </div>
+                <div><i className="fa-solid fa-star"><span className="ratingNr">{item.rating}</span></i> </div>
               </div>
               <div className="visibleDeets">
                 {((item.price)>(item.discountedPrice)) ? 

@@ -1,21 +1,12 @@
 import "../styling/css/details.css";
 
 import { Link, useParams } from "react-router-dom";
-// import style from "../css/productcard.module.css"
 import { useEffect, useState } from "react";
 import { Button } from "../components/styledComponents/Buttons";
 import { API } from "../constants/API";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/counter/cartSlice";
-
-// QuantityInput with buttons
-
-/**
- * Pulls param from URL and displays detailed info from the returned product
- * @returns
- * id, key, title, price, discountedPrice
- */
 
 export default function Details() {
   const [items, setItems] = useState([])
@@ -43,7 +34,6 @@ export default function Details() {
     
     getData()
     }, [url]);
-
     document.title = `${items.title}`
 
   if (isLoading || !items) {
@@ -60,7 +50,6 @@ export default function Details() {
       </div>
     )
   }
-
   
   let isOnSale = false;
     if ((items.price) > (items.discountedPrice)) {
@@ -68,39 +57,36 @@ export default function Details() {
     }
 
     if (items) {
-      // console.log(items.reviews);
       return (
-        <RenderProductCard
-        id = {items.id}
-        title={items.title}
-        price= {items.price}
-        discountedPrice= {isOnSale ? items.discountedPrice : items.price}
-        description = {items.description}
-        tags = {items.tags}
-        imageUrl = {items.imageUrl}
+          <RenderProductCard
+          id = {items.id}
+          title={items.title}
+          price= {items.price}
+          discountedPrice= {isOnSale ? items.discountedPrice : items.price}
+          description = {items.description}
+          tags = {items.tags}
+          imageUrl = {items.imageUrl}
 
-        review = {(items.reviews === null || items.reviews === [] || items.reviews === undefined) 
-        ? <div>No reviews yet</div> 
-        : items.reviews.map((review) => 
-        {
-          return (
-            <div className="reviewComponent" key={review.id}>
-              <div className="reviewerInfo">
-                <h3 className="reviewUsername"> {review.username}</h3>
-                <div className="reviewRating"> {review.rating} <i className="fa-solid fa-star"></i></div>
-              </div>
-              <div className="reviewDesc">
-                <p className="review">{review.description}</p>
-                <div className="thumbs">
-                  <i className="fa-solid fa-thumbs-up"></i>
-                  <i className="fa-solid fa-thumbs-down fa-flip-horizontal"></i>
+          review = {items.reviews
+          ? items.reviews.map((review) => (
+                <div className="reviewComponent" key={review.id}>
+                  <div className="reviewerInfo">
+                    <h3 className="reviewUsername"> {review.username}</h3>
+                    <div className="reviewRating"> {review.rating} <i className="fa-solid fa-star"></i></div>
+                  </div>
+                  <div className="reviewDesc">
+                    <p className="review">{review.description}</p>
+                    <div className="thumbs">
+                      <i className="fa-solid fa-thumbs-up"></i>
+                      <i className="fa-solid fa-thumbs-down fa-flip-horizontal"></i>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          )
-        })}
-        rating = {items.rating}
-      />
+              )) 
+          : []
+          }
+          rating = {items.rating}
+        />
       )
     }
   return (<div>Nothing to be returned</div>)
@@ -108,13 +94,12 @@ export default function Details() {
 
 export function RenderProductCard({ id, title, description, price, tags, imageUrl, review, discountedPrice, rating}) {
   const dispatch = useDispatch();
-  console.log(rating);
   const origPrice = price;
   const discPrice = (discountedPrice)
-  // let isDiscounted = origPrice - (origPrice * discPrice).toFixed(2)
+    const isDiscounted = parseFloat(100 - (100 * discPrice / origPrice).toFixed(2))
   
-  const isDiscounted = parseFloat(100 - (100 * discPrice / origPrice).toFixed(2))
-  return (
+  if (id) {
+    return (
     <>
       <Link to="/">Back</Link> 
       <div className="productDetailsPage" key={id}>
@@ -160,10 +145,14 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
             </div>
           </div>
           <div className="reviewsWrapper">
-            {review}
+            {(review.length) >0 ? review : <div className="reviewComponent">No reviews yet!</div>}
           </div>
         </div>
       </div>    
       </>
     )
+  } else {
+    return (<div>OOPS! Nothing to see here, <Link to="/">Go Back</Link>?</div>)
+  }
+  
   }
