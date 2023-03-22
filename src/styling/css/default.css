@@ -46,6 +46,12 @@ h1 {
   flex: 1;
   color: red;
 }
+.oldPrice del {
+  background-color: rgba(139, 55, 55, 0.4196078431);
+  padding: 0 0.2em;
+  border-radius: 0.5em;
+  color: white;
+}
 
 .fa-star {
   color: rgb(241, 181, 103);

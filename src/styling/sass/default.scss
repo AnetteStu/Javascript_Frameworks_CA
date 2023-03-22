@@ -46,6 +46,14 @@ h1 {
   justify-content: flex-start;
   flex: 1;
   color: red;
+
+  & del {
+    background-color: #8b37376b;
+    padding: 0 .2em;
+    border-radius: .5em;
+    color: white;
+  }
+
 }
 
 .fa-star {
