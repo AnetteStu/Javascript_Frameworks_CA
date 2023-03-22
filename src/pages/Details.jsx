@@ -118,10 +118,10 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
               <div className="subInfo">
                {(price > discountedPrice) ? 
                 <div className="detailsPrice">
-                  <del className=" oldPrice oldPriceDetails">
+                  <del className=" oldPrice">
                     {price},-
                   </del> 
-                  {discountedPrice},-
+                  {discountedPrice},- 
                   <span className="discountPersentage">
                       {Number(isDiscounted.toFixed(2))}% Off!
                   </span>

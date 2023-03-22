@@ -56,7 +56,7 @@
     .tag {
       margin-left: .5em;
       padding: .2em;
-      background-color: rgb(200 182 192);
+      background-color: rgba(141, 76, 36, 0.459);
       color: white;
       border-radius: .5em;
     }
@@ -73,6 +73,7 @@
   }
 
   .discountPersentage {
+    margin-left: .5em;
     background-color: rgba(216, 130, 169, 0.533);
     padding: .2em;
     border-radius: .5em;
