@@ -5,7 +5,7 @@ import Total from '../components/Total'
 import { useDispatch } from 'react-redux'
 import { clear, checkout } from '../features/counter/cartSlice'
 
-import { CartButton, CheckoutButton } from '../components/styledComponents/Buttons'
+import { CartButton, CheckoutButton } from '../components/styledComponents/Styled_components'
 
 function Cart() {
   document.title = `Cart`

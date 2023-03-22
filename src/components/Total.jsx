@@ -21,16 +21,23 @@ export default function Total() {
   return (
     <div className="cartTotalSum">
       <div className="cartSum">
-        <div>Items:</div>
-        <div>Orig:</div>
-        <div>Saving:</div>
+        <div className="cartSumItem priceOutline"> 
+          <div>Items:</div>
+          <span> {getTotal().totalQuantity}</span>
+        </div>
+        <div className="cartSumItem"> 
+          <div>Orig:</div>
+          <span> {getTotal().totalPrice.toFixed(2)}</span>
+        </div>
+        <div className="cartSumItem priceOutline"> 
+          <div>Saving:</div>
+          <span> - {getTotal().totalDiscountPrice.toFixed(2)}</span>
+        </div>
+        <div className="cartSumItem"> 
+          <div>Total:</div>
+          <span className="cartTotalPrices">{getTotal().totalDiscount.toFixed(2)}</span>
+        </div>
       </div>
-      <div>
-        <div> {getTotal().totalQuantity}</div>
-        <div> {getTotal().totalPrice.toFixed(2)},-</div>
-        <div> -{getTotal().totalDiscountPrice.toFixed(2)},-</div>
-      </div>
-      <div>Total: <span className="cartTotalPrices">{getTotal().totalDiscount.toFixed(2)},-</span></div>
     </div>
   )
 }

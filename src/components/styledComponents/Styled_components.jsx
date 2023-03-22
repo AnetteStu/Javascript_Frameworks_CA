@@ -56,6 +56,8 @@ export const FilterInput = styled.input `
 `
 
 export const ContactInput = styled(FilterInput) `
+  font-size: .8em;
+  color: grey;
   width: 90%;
   border-bottom: 2px solid gray;
   display: block;

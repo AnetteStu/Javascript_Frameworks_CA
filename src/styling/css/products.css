@@ -25,7 +25,6 @@
 .cardVisible .visibleTitle i {
   font-size: 1.2em;
   letter-spacing: 2px;
-  color: rgb(236, 162, 26);
 }
 .cardVisible .visibleDeets {
   height: inherit;

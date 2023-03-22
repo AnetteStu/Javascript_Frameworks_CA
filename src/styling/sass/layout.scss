@@ -9,7 +9,7 @@
 // body styling
 .body {
   flex: 1;
-  // overflow: auto;
+  margin-bottom: 2em;
 }
 
 //Header Styling
@@ -30,6 +30,16 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding: 1% 10%;
+}
+
+.footerRow {
+  width: 100%;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.footerItem {
+  width: 100%;
 }
 
 

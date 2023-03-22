@@ -1,6 +1,6 @@
 import "../styling/css/cart.css";
 import { incrementQuantity, decrementQuantity, removeItem } from "../features/counter/cartSlice";
-import { CartDeleteButton } from "./styledComponents/Buttons";
+import { CartDeleteButton } from "./styledComponents/Styled_components";
 import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";

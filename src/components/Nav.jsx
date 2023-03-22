@@ -13,11 +13,9 @@ const getTotalQuantity = () => {
   return total
 }
   return (
-    <nav>
-      <div className='navLeft'>
-        <Link to="/">eCommerce</Link>
-      </div>
+    <nav className='container header'>
       <ul>
+        {/* <Link to="/">eCommerce</Link> */}
         <li>
           <Link to="/">Shop</Link>
         </li>

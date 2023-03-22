@@ -54,4 +54,8 @@ h1 {
   background-color: rgba(192, 0, 0, 0.3058823529);
   padding: 0.1em;
   border-radius: 0.2em;
+}
+
+.fa-star {
+  color: rgb(241, 181, 103);
 }/*# sourceMappingURL=default.css.map */

@@ -77,24 +77,42 @@ th:first-of-type {
   flex-direction: row;
   align-items: center;
 }
+
 .cartSum {
-  font-weight: bold;
-  margin-right: .5em;
+  width: 100%;
 }
 
 .cartTotalSum {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 1em;
-  :nth-child(2) {
-    margin-right: .5em;
-  }
-  // :last-child {
-  //   font-size: 1.2em;
-  // }
-}
+  // margin-right: 1em;
+  min-width: 150px;
+  // :nth-child(2) {
+    //   margin-right: .5em;
+    // }
+    // :last-child {
+      //   font-size: 1.2em;
+      // }
+      
+      margin-right: 1em;
+    }
+    
+    .cartSumItem {
+      display: flex;
+      flex-direction: row;
+      
+      justify-content: space-between;
+    }
 
 .cartTotalPrices {
   font-weight: bold;
+}
+
+.priceOutline {
+  background-color: rgba(255, 141, 123, 0.182);
+  // margin: 2px;
+  padding: 2px;
+  border-radius: .6em;
+  // color: white;
 }

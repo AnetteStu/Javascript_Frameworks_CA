@@ -1,7 +1,3 @@
-// .container {
-//   height: 100%;
-// }
-
 .loadingDetails {
   width: 100%;
   margin: 0 auto;
@@ -36,6 +32,19 @@
       flex-direction: column;
       flex: 1;
       justify-content: space-between;
+    }
+
+    .pageHeader  {
+      display: flex;
+      flex-direction: row;
+      font-size: 2em;
+      align-items: center;
+      justify-content: space-between;
+
+      & .fa-star, span {
+        margin: 0;
+        font-size: 1em;
+      }
     }
 
     .itemTag {
@@ -115,7 +124,6 @@
 
   .fa-star {
     animation: rotate 10s 2s infinite linear;
-    color: rgb(241, 181, 103);
   }
 
   .reviewDesc {
@@ -148,14 +156,17 @@
   .productDetailsPage {
     flex-direction: column;
   }
-
-  
   
 }
 @media screen and (max-width: 767px) {
 
   .productImage img {
     width: 100%!important;
+    max-height: 250px;
+  }
+  .pageHeader {
+    margin-top: .5em;
+    font-size: 2.5em;
   }
 
   .productDetailsPage {

@@ -2,7 +2,7 @@ import "../styling/css/details.css";
 
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Button } from "../components/styledComponents/Buttons";
+import { Button } from "../components/styledComponents/Styled_components";
 import { API } from "../constants/API";
 
 import { useDispatch } from "react-redux";
@@ -101,7 +101,12 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
   if (id) {
     return (
     <>
-      <Link to="/">Back</Link> 
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Shop</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">{title}</li>
+        </ol>
+      </nav>
       <div className="productDetailsPage" key={id}>
         <div className="productImage">
           <img src={imageUrl} alt={title}/>
@@ -109,10 +114,7 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
         <div className="detailsWrapper">
           <div  className="productDetails">
             <div className="firstDetails">
-              <h1 className="pageHeader">
-                {title}
-              </h1>
-              {rating} <i className="fa-solid fa-star"></i>
+              <div className="pageHeader"> {title} <span>{rating} <i className="fa-solid fa-star"></i></span></div>
               <div className="subInfo">
                {(price > discountedPrice) ? 
                 <div className="detailsPrice">

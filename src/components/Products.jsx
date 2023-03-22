@@ -3,7 +3,7 @@ import "../styling/css/products.css";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API } from "../constants/API";
-import { FilterInput } from "./styledComponents/Buttons";
+import { FilterInput } from "./styledComponents/Styled_components";
 
 /**
  * Returns an array of product and displays them

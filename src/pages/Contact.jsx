@@ -2,7 +2,7 @@ import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import {  ContactInput, ContactLabel, SubmitButton } from '../components/styledComponents/Buttons';
+import {  ContactInput, ContactLabel, SubmitButton } from '../components/styledComponents/Styled_components';
 
 import "../styling/css/contact.css";
 
