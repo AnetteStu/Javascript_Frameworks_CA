@@ -123,7 +123,7 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
                 <div className="detailsHeaderTitle">
                   {title}
                 </div>   
-                <span> {rating} <i className="fa-solid fa-star"></i></span>
+                <span>  <i className="fa-solid fa-star"></i>{rating}/5</span>
               </div>
               {/* <div className="pageHeader"> {title} <Rating stars={rating}/></div> */}
               <div className="subInfo">
