@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Nunito:wght@300&display=swap");
 .project {
   height: 100vh;
   display: flex;
@@ -11,6 +12,7 @@
 
 header {
   display: flex;
+  justify-content: center;
 }
 
 footer {

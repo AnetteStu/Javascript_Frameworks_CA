@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Nunito:wght@300&display=swap");
 .loadingDetails {
   width: 100%;
   margin: 0 auto;
@@ -46,6 +47,9 @@
   margin: 0;
   font-size: 1em;
 }
+.productDetailsPage .detailsWrapper .detailsHeaderTitle {
+  font-family: "Heebo", sans-serif;
+}
 .productDetailsPage .detailsWrapper .itemTag {
   display: flex;
   flex-direction: row;
@@ -55,8 +59,7 @@
 .productDetailsPage .detailsWrapper .tag {
   margin-left: 0.5em;
   padding: 0.2em;
-  background-color: rgba(141, 76, 36, 0.459);
-  color: white;
+  background-color: rgba(255, 141, 123, 0.182);
   border-radius: 0.5em;
 }
 .productDetailsPage .detailsWrapper .subInfo {
@@ -83,7 +86,9 @@
 }
 
 .itemDescription {
+  display: flex;
   flex-wrap: wrap;
+  font-family: "Nunito", sans-serif;
 }
 
 .productImage img {
@@ -104,6 +109,9 @@
   border-radius: 0.5em;
   width: 100%;
 }
+.reviewComponent .reviewUsername {
+  font-family: "Heebo", sans-serif;
+}
 .reviewComponent .reviewerInfo {
   width: 100%;
   border-bottom: 2px solid rgb(198, 198, 198);
@@ -121,6 +129,7 @@
 }
 .reviewComponent .reviewDesc .review {
   flex: 1;
+  font-family: "Nunito", sans-serif;
 }
 .reviewComponent .reviewDesc .thumbs {
   display: flex;
@@ -144,7 +153,7 @@
 }
 @media screen and (max-width: 767px) {
   .productImage img {
-    width: 100% !important;
+    width: 100%;
     max-height: 250px;
   }
   .pageHeader {

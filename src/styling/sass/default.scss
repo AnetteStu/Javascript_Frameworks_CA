@@ -3,7 +3,7 @@
 
 * {
   font-family: 'Kanit', sans-serif;
-  color: #8b3737;
+  color: $defaultColor;
 }
 
 html, body {
@@ -31,6 +31,7 @@ a:hover {
   color: rgb(77, 0, 0);
 }
 
+// Cart Color
 i {
   color: rgb(99, 86, 86);
 }

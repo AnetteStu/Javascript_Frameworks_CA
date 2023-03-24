@@ -1,3 +1,7 @@
+@import "./variables";
+
+// I realised I did a grave mistake when I wanted to try and style the table element for smaller viewports.. Tables are not very customizable... 
+
 .cartTable {
   width: 100%;
 }
@@ -8,14 +12,9 @@ tr:first-of-type {
 }
 
 tr:nth-child(even) {
-  background: linear-gradient(-0.25turn, #eed9d66d, #eed9d600);
+  background: linear-gradient(-0.25turn, $accentColor, #eed9d600);
   clip-path: inset(0 round .5em);
 }
-
-// tr:hover {
-//   background-color: rgba(233, 129, 214, 0.227);
-//   clip-path: inset(0 round .5em);
-// }
 th:first-of-type {
   width: 60%;
 }
@@ -86,24 +85,16 @@ th:first-of-type {
   display: flex;
   flex-direction: row;
   align-items: center;
-  // margin-right: 1em;
-  min-width: 150px;
-  // :nth-child(2) {
-    //   margin-right: .5em;
-    // }
-    // :last-child {
-      //   font-size: 1.2em;
-      // }
-      
-      margin-right: 1em;
-    }
+  min-width: 150px;      
+  margin-right: 1em;
+}
     
-    .cartSumItem {
-      display: flex;
-      flex-direction: row;
-      
-      justify-content: space-between;
-    }
+.cartSumItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 .5em;
+}
 
 .cartTotalPrices {
   font-weight: bold;
@@ -111,8 +102,42 @@ th:first-of-type {
 
 .priceOutline {
   background-color: rgba(255, 141, 123, 0.182);
-  // margin: 2px;
   padding: 2px;
   border-radius: .6em;
-  // color: white;
+  padding: 0 .5em;
 }
+
+.cartDiscountedPrice {
+  display: flex;
+  flex-direction: row;
+}
+
+.saleIcon {
+  position: relative;
+  border-radius: .2em;
+  padding: 0 .4em;
+
+  font-size: .7em;
+  font-weight: bold;
+}
+
+@media screen and (min-width:767px) and (max-width: 1023px) {
+
+
+  
+  }
+
+  @media screen and (max-width: 767px) {
+    .cartTableImg {
+      width: auto;
+    }
+
+    // .cartItemButtons {
+    //   flex-direction: row;
+    // }
+    
+    tr {
+      max-width: fit-content;
+      
+    }
+  }

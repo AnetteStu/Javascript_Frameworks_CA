@@ -7,6 +7,7 @@ import { API } from "../constants/API";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/counter/cartSlice";
+import Rating from "../components/Rating";
 
 export default function Details() {
   const [items, setItems] = useState([])
@@ -64,7 +65,11 @@ export default function Details() {
           price= {items.price}
           discountedPrice= {isOnSale ? items.discountedPrice : items.price}
           description = {items.description}
-          tags = {items.tags}
+          tags = {items.tags
+          ? items.tags.map((tag) => (
+            <span className="tag" key={id}>{tag}</span>
+          ))
+          : <div>No tags</div>}
           imageUrl = {items.imageUrl}
 
           review = {items.reviews
@@ -72,7 +77,7 @@ export default function Details() {
                 <div className="reviewComponent" key={review.id}>
                   <div className="reviewerInfo">
                     <h3 className="reviewUsername"> {review.username}</h3>
-                    <div className="reviewRating"> {review.rating} <i className="fa-solid fa-star"></i></div>
+                    <div> {review.rating} <i className="fa-solid fa-star"></i></div>
                   </div>
                   <div className="reviewDesc">
                     <p className="review">{review.description}</p>
@@ -114,7 +119,13 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
         <div className="detailsWrapper">
           <div  className="productDetails">
             <div className="firstDetails">
-              <div className="pageHeader"> {title} <span>{rating} <i className="fa-solid fa-star"></i></span></div>
+              <div className="pageHeader"> 
+                <div className="detailsHeaderTitle">
+                  {title}
+                </div>   
+                <span> {rating} <i className="fa-solid fa-star"></i></span>
+              </div>
+              {/* <div className="pageHeader"> {title} <Rating stars={rating}/></div> */}
               <div className="subInfo">
                {(price > discountedPrice) ? 
                 <div className="detailsPrice">
@@ -143,10 +154,10 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
             </div>
             <div className="secondDetails">
               <div className="itemTag">Tags: </div>
-              <span className="tag">{tags}</span>
+              {(tags.length) >0 ? tags : <div>No tags</div>}
             </div>
           </div>
-          <div className="reviewsWrapper">
+          <div>
             {(review.length) >0 ? review : <div className="reviewComponent">No reviews yet!</div>}
           </div>
         </div>
@@ -154,6 +165,7 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
       </>
     )
   } else {
+    
     return (<div>OOPS! Nothing to see here, <Link to="/">Go Back</Link>?</div>)
   }
   

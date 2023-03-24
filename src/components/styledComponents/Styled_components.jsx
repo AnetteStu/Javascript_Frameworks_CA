@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { incrementQuantity } from "../../features/counter/cartSlice";
 
 export const Button = styled.button `
 background-color: pink;
@@ -20,6 +21,28 @@ export const SubmitButton = styled(Button) `
   &:hover {
     letter-spacing: .2em;
   }
+`
+export const IncreaseButton = styled.button `
+  transition: all .1s ease-in-out;
+  background-color: #ffa971;
+  border-radius: .2em;
+  border: 0;
+
+  display: flex;
+  align-items: flex-end;
+  align-content: center;
+  flex-direction: column;
+  
+  &:hover {
+    transform: scale(1.2);
+    background-color: #93d355;
+  }
+`
+
+export const DecreaseButton = styled(IncreaseButton) `
+:hover {
+  background-color: red;
+}
 `
 
 export const FilterInput = styled.input `

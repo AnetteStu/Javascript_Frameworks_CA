@@ -1,4 +1,7 @@
+@import "./variables";
+
 .products {
+  transition: all .3s ease-in-out;
   display: flex;
   flex-wrap: wrap;
   margin-top: 2em;
@@ -11,6 +14,10 @@
   display: flex;
   flex-direction: column;
   transition: all .2s ease-in-out;
+
+  .visibleItemTitle {
+    font-family: $titleFontDefault;
+  }
 
   .visibleTitle {
     display: flex;
@@ -100,6 +107,7 @@
 
 // Width and margin set to fit 4 in a row, adjust for other viewports
 .product {
+  transition: all .3s ease-in-out;
   // Individual cart sizing
   width: 23%;
   margin: 1%;
@@ -230,8 +238,7 @@
 
   @media screen and (max-width: 767px) {
     .welcome {
-      flex-direction: column!important;
-      // Figure out why it doesn't work without !important
+      flex-direction: column;
     }
 
     .product {
@@ -260,13 +267,13 @@
     height: 100%;
   }
 
-  .priceDeets {
+  .product .priceDeets {
     margin-bottom: 0;
     height: 100%;
 
     display: flex;
     align-items: flex-end;
-    color: rgb(53, 0, 0)!important;
+    color: rgb(53, 0, 0);
   }
 
   // Remove important tag later!! figure out why it doesn't want to get the correct color

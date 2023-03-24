@@ -1,3 +1,5 @@
+@import "./variables";
+
 .loadingDetails {
   width: 100%;
   margin: 0 auto;
@@ -10,6 +12,8 @@
     animation: rotate 1s infinite linear;
   }
 }
+
+// Loading Animation
 
 @keyframes rotate {
   from {transform: rotate(0deg);}
@@ -47,6 +51,10 @@
       }
     }
 
+    .detailsHeaderTitle {
+      font-family: $titleFontDefault;
+    }
+
     .itemTag {
       display: flex;
       flex-direction: row;
@@ -56,8 +64,7 @@
     .tag {
       margin-left: .5em;
       padding: .2em;
-      background-color: rgba(141, 76, 36, 0.459);
-      color: white;
+      background-color: $accentColor;
       border-radius: .5em;
     }
     .subInfo {
@@ -88,8 +95,11 @@
 }
 
 .itemDescription {
+  display: flex;
   flex-wrap: wrap;
+  font-family: $descriptionFontDefault;
 }
+
 .productImage img {
   height: 500px;
   width: 560px;
@@ -102,10 +112,9 @@
 
   border-radius: 1em;
 }
-// .reviewsWrapper {
-//   background-color: white;
-//   margin-top: 1em;
-// }
+
+// Review Component Styling
+
 .reviewComponent {
   background-color: rgb(252, 245, 249);
   padding: .5em;
@@ -113,6 +122,10 @@
   border-radius: .5em;
   width: 100%;
   // box-shadow: ;
+
+  .reviewUsername {
+    font-family: $titleFontDefault;
+  }
 
   .reviewerInfo {
     width: 100%;
@@ -133,6 +146,7 @@
 
     .review {
       flex: 1;
+      font-family: $descriptionFontDefault;
     }
     .thumbs {
       display: flex;
@@ -162,7 +176,7 @@
 @media screen and (max-width: 767px) {
 
   .productImage img {
-    width: 100%!important;
+    width: 100%;
     max-height: 250px;
   }
   .pageHeader {

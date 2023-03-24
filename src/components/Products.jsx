@@ -55,7 +55,7 @@ export default function Products() {
     <div className="products">
     <FilterInput 
       placeholder='Search...'
-      onChange={(e) => setSearch(e.target.value)}
+      onChange={(e) => setSearch(e.target.value.toLowerCase())}
     />
         {items.filter((item) => {
           return search.toLowerCase() === '' ? 
@@ -65,7 +65,7 @@ export default function Products() {
           <Link to={"products/"+item.id} key={item.id} className="product">
             <div className="cardVisible">
               <div className="visibleTitle">
-                <div>{item.title}</div>
+                <div className="visibleItemTitle">{item.title}</div>
                 <div><i className="fa-solid fa-star"><span className="ratingNr">{item.rating}</span></i> </div>
               </div>
               <div className="visibleDeets">

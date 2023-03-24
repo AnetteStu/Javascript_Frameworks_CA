@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Nunito:wght@300&display=swap");
 .cartTable {
   width: 100%;
 }
@@ -8,7 +9,7 @@ tr:first-of-type {
 }
 
 tr:nth-child(even) {
-  background: linear-gradient(-0.25turn, rgba(238, 217, 214, 0.4274509804), rgba(238, 217, 214, 0));
+  background: linear-gradient(-0.25turn, rgba(255, 141, 123, 0.182), rgba(238, 217, 214, 0));
   clip-path: inset(0 round 0.5em);
 }
 
@@ -89,6 +90,7 @@ th:first-of-type {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 0.5em;
 }
 
 .cartTotalPrices {
@@ -99,4 +101,27 @@ th:first-of-type {
   background-color: rgba(255, 141, 123, 0.182);
   padding: 2px;
   border-radius: 0.6em;
+  padding: 0 0.5em;
+}
+
+.cartDiscountedPrice {
+  display: flex;
+  flex-direction: row;
+}
+
+.saleIcon {
+  position: relative;
+  border-radius: 0.2em;
+  padding: 0 0.4em;
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+  .cartTableImg {
+    width: auto;
+  }
+  tr {
+    max-width: fit-content;
+  }
 }/*# sourceMappingURL=cart.css.map */

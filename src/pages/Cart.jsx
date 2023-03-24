@@ -25,15 +25,15 @@ function Cart() {
                 <th>Price</th>
                 <th>Total</th>
                 <th>Delete</th>
-              </tr>
+            </tr>
                 {cart?.map((item) => (
                   <CartItem
                     key={item.id}
                     id={item.id}
                     image={item.imageUrl}
                     title={item.title}
-                    price={item.price.toFixed(2)} 
-                    discount= {item.discountedPrice}
+                    price={item.price} 
+                    discount= {item.discountedPrice.toFixed(2)}
                     quantity={item.quantity}
                   />
                 ))}  

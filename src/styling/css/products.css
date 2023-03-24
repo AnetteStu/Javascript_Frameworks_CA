@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Nunito:wght@300&display=swap");
 .products {
+  transition: all 0.3s ease-in-out;
   display: flex;
   flex-wrap: wrap;
   margin-top: 2em;
@@ -10,6 +12,9 @@
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-in-out;
+}
+.cardVisible .visibleItemTitle {
+  font-family: "Heebo", sans-serif;
 }
 .cardVisible .visibleTitle {
   display: flex;
@@ -84,6 +89,7 @@
 }
 
 .product {
+  transition: all 0.3s ease-in-out;
   width: 23%;
   margin: 1%;
 }
@@ -197,7 +203,7 @@
 }
 @media screen and (max-width: 767px) {
   .welcome {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   .product {
     width: 48%;
@@ -221,12 +227,12 @@
     align-items: flex-end;
     height: 100%;
   }
-  .priceDeets {
+  .product .priceDeets {
     margin-bottom: 0;
     height: 100%;
     display: flex;
     align-items: flex-end;
-    color: rgb(53, 0, 0) !important;
+    color: rgb(53, 0, 0);
   }
   .itemTitle {
     font-size: 1.2em;
