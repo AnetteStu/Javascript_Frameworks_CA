@@ -128,7 +128,7 @@
   background-repeat: no-repeat;
   object-fit: cover;
   border-radius: 0.5em;
-  box-shadow: rgba(40, 30, 30, 0.27) 2px 2px 5px;
+  box-shadow: rgba(52, 12, 12, 0.27) 2px 5px 9px;
 }
 
 .contextWrapper {

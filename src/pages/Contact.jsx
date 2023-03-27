@@ -1,6 +1,7 @@
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { Link } from 'react-router-dom';
 
 import {  ContactInput, ContactLabel, SubmitButton } from '../components/styledComponents/Styled_components';
 
@@ -31,6 +32,12 @@ export default function Contact() {
   return (
 
     <>
+    <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Shop</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Contact</li>
+        </ol>
+      </nav>
       <h1 className="pageHeader">Contact</h1>
       <div className='contact'>
         <div className='contactForm'>

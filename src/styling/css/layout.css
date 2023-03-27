@@ -18,7 +18,7 @@ header {
 footer {
   margin-top: 2em;
   flex: 0 1 60px;
-  background-color: rgb(255, 244, 252);
+  background-color: rgb(244, 244, 244);
   width: 100%;
   align-items: center;
   justify-content: space-between;

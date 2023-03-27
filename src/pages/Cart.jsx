@@ -5,6 +5,7 @@ import Total from '../components/Total'
 import { useDispatch } from 'react-redux'
 import { clear, checkout } from '../features/counter/cartSlice'
 
+
 import { CartButton, CheckoutButton } from '../components/styledComponents/Styled_components'
 
 function Cart() {
@@ -16,6 +17,12 @@ function Cart() {
   if (cart.length >= 1) {
     return (
       <>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Shop</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+      </nav>
         <h1>Cart</h1>
         <table className="cartTable">
             <tbody>
@@ -55,6 +62,12 @@ function Cart() {
   }
   return (
     <>
+    <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Shop</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+      </nav>
       <h1>Cart</h1>
       <p>Nothing in cart yet!</p>
     </>

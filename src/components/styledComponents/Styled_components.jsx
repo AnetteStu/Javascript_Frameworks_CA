@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { incrementQuantity } from "../../features/counter/cartSlice";
 
 export const Button = styled.button `
 background-color: pink;
@@ -8,8 +7,13 @@ border: transparent solid 2px;
 border-radius: .2em;
 margin: 0 .5em 0 0;
 transition: all .2s ease-in-out;
+transform: scale(1.2);
 :hover {
   border: #e38787 solid 2px;
+}
+
+:active {
+  transform: scale(1.1);
 }
 `
 
@@ -101,6 +105,8 @@ background-color: red;
 transition: .2s ease-in-out;
 height: 50px;
 width: 140px;
+transform: scale(1);
+
   :hover {
     padding: .5em;
     letter-spacing: .2em;
@@ -113,10 +119,11 @@ export const QuantityInput = styled(FilterInput)`
 `
 
 export const CartDeleteButton = styled(Button)`
-  
+${'' /* transform: scale(1); */}
 `
 
 export const CheckoutButton = styled(Button)`
   height: 50px;
   width: 130px;
+  transform: scale(1)
 `

@@ -55,33 +55,17 @@
       font-family: $titleFontDefault;
     }
 
-    .itemTag {
-      display: flex;
-      flex-direction: row;
-      flex: 0;
-      width: 100;
-    }
-    .tag {
-      margin-left: .5em;
-      padding: .2em;
-      background-color: $accentColor;
-      border-radius: .5em;
-    }
+    
     .subInfo {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
-    .secondDetails {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
   }
 
   .discountPersentage {
     margin-left: .5em;
-    background-color: rgba(216, 130, 169, 0.533);
+    background-color: $accentColor;
     padding: .2em;
     border-radius: .5em;
     text-transform: uppercase;
@@ -108,20 +92,24 @@
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
-  box-shadow: rgba(52, 12, 12, 0.27) 2px 5px 9px;
+  box-shadow: $defaultBoxShadow;
 
   border-radius: 1em;
+}
+
+.price {
+  font-size: 2.4em;
 }
 
 // Review Component Styling
 
 .reviewComponent {
-  background-color: rgb(252, 245, 249);
+  background-color: rgb(250, 250, 250);
   padding: .5em;
   margin-top: 1em;
   border-radius: .5em;
   width: 100%;
-  // box-shadow: ;
+  box-shadow: $defaultBoxShadow;
 
   .reviewUsername {
     font-family: $titleFontDefault;
@@ -152,19 +140,42 @@
       display: flex;
       flex: 0;
       flex-direction: row;
+      height: 4em;
 
       .fa-thumbs-down {
         padding-right: 1em;
         &:hover {
-          font-size: 1em;
+          padding-top: .3em;
+          cursor: pointer;
+          color: red;
         }
       }
       
       .fa-thumbs-up:hover {
-        font-size: 1em;
+        margin-top: .5em;
+        cursor: pointer;
+        color: #93d355;
       }
     }
   }
+}
+
+.itemTag {
+  display: flex;
+  flex-direction: row;
+  flex: 0;
+  width: 100;
+}
+.tag {
+  margin-left: .5em;
+  padding: .2em;
+  background-color: $accentColor;
+  border-radius: .5em;
+}
+
+.tags {
+  margin-top: 1em;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width:767px) and (max-width: 1023px) {

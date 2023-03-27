@@ -1,16 +1,13 @@
 
 
 
-// export default function Rating(props) {
-
-//   // console.log(props.stars);
-//   // let txt = ``;
-//   // let ratings = parseFloat(props.stars);
+export default function Rating(props) {
+  let rating = props.stars
   
-//   // for (let i = 0; i < ratings ; i++) {
-//   //   // console.log(ratings);
-//   //   txt += `<i className="fa-solid fa-star"></i>`    
-//   // }
-//   return ( 
-//   )
-// }
+  // console.log(rating);
+  return Array.from(Array(5)).map((item, index) => {
+    if(index < rating) {
+      return (<i className="fa-solid fa-star" key={index}></i>)
+    } return (<i className="fa-regular fa-star" key={index}></i>)
+  })  
+}

@@ -50,31 +50,14 @@
 .productDetailsPage .detailsWrapper .detailsHeaderTitle {
   font-family: "Heebo", sans-serif;
 }
-.productDetailsPage .detailsWrapper .itemTag {
-  display: flex;
-  flex-direction: row;
-  flex: 0;
-  width: 100;
-}
-.productDetailsPage .detailsWrapper .tag {
-  margin-left: 0.5em;
-  padding: 0.2em;
-  background-color: rgba(255, 141, 123, 0.182);
-  border-radius: 0.5em;
-}
 .productDetailsPage .detailsWrapper .subInfo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.productDetailsPage .detailsWrapper .secondDetails {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 .productDetailsPage .discountPersentage {
   margin-left: 0.5em;
-  background-color: rgba(216, 130, 169, 0.533);
+  background-color: rgba(255, 141, 123, 0.182);
   padding: 0.2em;
   border-radius: 0.5em;
   text-transform: uppercase;
@@ -102,12 +85,17 @@
   border-radius: 1em;
 }
 
+.price {
+  font-size: 2.4em;
+}
+
 .reviewComponent {
-  background-color: rgb(252, 245, 249);
+  background-color: rgb(250, 250, 250);
   padding: 0.5em;
   margin-top: 1em;
   border-radius: 0.5em;
   width: 100%;
+  box-shadow: rgba(52, 12, 12, 0.27) 2px 5px 9px;
 }
 .reviewComponent .reviewUsername {
   font-family: "Heebo", sans-serif;
@@ -135,15 +123,39 @@
   display: flex;
   flex: 0;
   flex-direction: row;
+  height: 4em;
 }
 .reviewComponent .reviewDesc .thumbs .fa-thumbs-down {
   padding-right: 1em;
 }
 .reviewComponent .reviewDesc .thumbs .fa-thumbs-down:hover {
-  font-size: 1em;
+  padding-top: 0.3em;
+  cursor: pointer;
+  color: red;
 }
 .reviewComponent .reviewDesc .thumbs .fa-thumbs-up:hover {
-  font-size: 1em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  color: #93d355;
+}
+
+.itemTag {
+  display: flex;
+  flex-direction: row;
+  flex: 0;
+  width: 100;
+}
+
+.tag {
+  margin-left: 0.5em;
+  padding: 0.2em;
+  background-color: rgba(255, 141, 123, 0.182);
+  border-radius: 0.5em;
+}
+
+.tags {
+  margin-top: 1em;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 767px) and (max-width: 1023px) {

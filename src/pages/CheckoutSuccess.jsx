@@ -6,7 +6,7 @@ export default function CheckoutSuccess() {
     <>
       <h1>Thank you for your order!</h1> <Link to="/">Return</Link> 
       <div className="successMessage">Order no: 00037632</div>
-      <div>Your items will be on their way soon!</div>
+      <div>A receipt has been sent to the email provided, your items will be on their way soon!</div>
       <div className="successTable">
         <h4>Summary</h4>
         <div className="itemWrapperSuccess">

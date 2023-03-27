@@ -67,7 +67,7 @@ export default function Details() {
           description = {items.description}
           tags = {items.tags
           ? items.tags.map((tag) => (
-            <span className="tag" key={id}>{tag}</span>
+            <span className="tag" key={id +"/"+ tag}>{tag}</span>
           ))
           : <div>No tags</div>}
           imageUrl = {items.imageUrl}
@@ -113,9 +113,15 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
         </ol>
       </nav>
       <div className="productDetailsPage" key={id}>
-        <div className="productImage">
-          <img src={imageUrl} alt={title}/>
+        <div className="imgTags">
+          <div className="productImage">
+            <img src={imageUrl} alt={title}/>
+          </div>
+          <div className="tags">
+            {(tags.length) >0 ? tags : <div>No tags</div>}
+          </div>
         </div>
+        
         <div className="detailsWrapper">
           <div  className="productDetails">
             <div className="firstDetails">
@@ -123,22 +129,22 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
                 <div className="detailsHeaderTitle">
                   {title}
                 </div>   
-                <span>  <i className="fa-solid fa-star"></i>{rating}/5</span>
+                {/* <span>  <i className="fa-solid fa-star"></i>{rating}/5</span> */}
               </div>
-              {/* <div className="pageHeader"> {title} <Rating stars={rating}/></div> */}
+              <div className="starArray"><Rating stars={rating}/>({rating})</div>
               <div className="subInfo">
                {(price > discountedPrice) ? 
                 <div className="detailsPrice">
                   <del className=" oldPrice">
                     {price},-
                   </del> 
-                  {discountedPrice},- 
+                  <span className="price">{discountedPrice},- </span>
                   <span className="discountPersentage">
                       {Number(isDiscounted.toFixed(2))}% Off!
                   </span>
                 </div>
                   :
-                  `${price},-`
+                  <span className="price">{price},-</span>
                }
                 <div className="itemButtons">
                   <Button 
@@ -152,10 +158,7 @@ export function RenderProductCard({ id, title, description, price, tags, imageUr
               </div>
             <p className="itemDescription">{description}</p>
             </div>
-            <div className="secondDetails">
-              <div className="itemTag">Tags: </div>
-              {(tags.length) >0 ? tags : <div>No tags</div>}
-            </div>
+            
           </div>
           <div>
             {(review.length) >0 ? review : <div className="reviewComponent">No reviews yet!</div>}
