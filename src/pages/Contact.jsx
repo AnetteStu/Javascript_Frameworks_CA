@@ -27,6 +27,7 @@ export default function Contact() {
 
   function onSubmit(data) {
     console.log(data);
+    alert("Message was totally sent")
   }
 
   return (
