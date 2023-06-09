@@ -66,4 +66,4 @@ You may also submit any recommendations via our issues thread
 
 ## Acknowledgments
 
-Thank you Marting Kruger for helping with correcting of the Responsive Rating Component.
+Thank you Martin Kruger for helping with correcting of the Responsive Rating Component.
